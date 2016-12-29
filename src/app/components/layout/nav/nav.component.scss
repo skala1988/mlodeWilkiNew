@@ -1,0 +1,210 @@
+@import '../../../theme/main';
+
+nav {
+  min-width: 320px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .nav-bar {
+    &-top {
+      padding: 0 12px;
+      color: $color-red;
+      height: 30px;
+      line-height: 30px;
+      max-height: 30px;
+      overflow: hidden;
+      background-color: $color-bar-top-background;
+      border-bottom: solid 1px $color-gray;
+      @include transition($nav-first-row-transition);
+
+      i {
+        color: $color-red;
+        margin-right: 10px;
+      }
+
+      a {
+        color: $color-red;
+      }
+    }
+    &-bottom {
+      height: 70px;
+      padding: 10px 12px;
+      background-color: $color-bar-bottom-background;
+      @include transition($nav-second-row-transition);
+
+      .container {
+        position: relative;
+      }
+      &-logo{
+        width: 210px;
+        position: absolute;
+        left: 15px;
+        top: 0px;
+      }
+      &-menu{
+        width: 100%;
+        padding-left: 260px;
+        text-align: right;
+
+        .glyphicon-menu-hamburger {
+          display: none;
+          width: 38px;
+          font-size: 38px;
+          line-height: 50px;
+          color: $color-nav-menu-item;
+          cursor: pointer;
+        }
+
+        &-links {
+          display: block;
+          ul {
+            @include respond-to(md-up) {
+              background-color: transparent!important;
+            }
+
+
+            li + li {
+              margin-left: 35px;
+            }
+          }
+          a {
+            color: $color-nav-menu-item;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 50px;
+            position: relative;
+            text-decoration: none;
+
+            &:after {
+              display: block;
+              content: '';
+              height: 2px;
+              width: 100%;
+              bottom: -27px;
+              position: absolute;
+              background-color: transparent;
+              @include transition(background-color 0.25s 0s linear);
+            }
+            &:hover:after {
+              background-color: $color-nav-menu-item;
+            }
+          }
+        }
+
+        @include respond-to(sm-down) {
+          .nav-bar-bottom-menu-links {
+            display: none;
+            position: absolute;
+            width: 320px;
+            right: 0px;
+            top: 62px;
+            padding: 0px;
+            @include transition(background-color 0.25s 0s linear);
+
+            ul {
+              margin: 0 -15px;
+              background-color: $color-bar-top-background;
+
+              li {
+                width: 100%;
+                margin: 0px;
+                border-bottom: solid 1px $color-gray;
+                color: $color-red;
+                text-align: center;
+                padding: 4px 0;
+
+                a:after{
+                  display: none;
+                }
+              }
+            }
+          }
+
+          .glyphicon-menu-hamburger {
+            display: block;
+          }
+        }
+      }
+      .left-logo{
+        a {
+          text-decoration: none;
+        }
+        &-site-name{
+          color: white;
+          display: inline-block;
+          vertical-align: middle;
+
+          h1 {
+            font-size: 24px;
+            color: inherit;
+            margin: 0px;
+          }
+
+          h2 {
+            font-size: 14px;
+            color: inherit;
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
+  &.isRMA {
+    @include respond-to(sm-down) {
+      .nav-bar-bottom-menu {
+        .nav-bar-bottom-menu-links {
+         display: block;
+        }
+      }
+    }
+  }
+  &.scrolled {
+    .nav-bar {
+      &-top {
+        max-height: 0px;
+      }
+      &-bottom {
+        background-color: $color-bar-bottom-background--lighter;
+      }
+    }
+    .loader-bar {
+      width: 0px;
+      height: 2px;
+      background-color: $color-red;
+    }
+
+    &.isRMA {
+      .nav-bar-bottom-menu-links {
+        ul {
+          background-color: $color-bar-bottom-background--lighter;
+        }
+      }
+    }
+    &:hover {
+      .nav-bar-bottom-menu {
+        .nav-bar-bottom-menu-links {
+          ul {
+            @include transition(background-color 0.25s 1s linear);
+            background-color: $color-bar-bottom-background;
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    .nav-bar-top {
+      @include transition(max-height 0.25s 1s linear);
+      max-height: 30px;
+    }
+    .nav-bar-bottom {
+      @include transition(background-color 0.25s 1s linear);
+      background-color: $color-bar-bottom-background;
+    }
+    .loader-bar {
+      width: 100%;
+      @include transition(width 1s 0s linear);
+    }
+  }
+}

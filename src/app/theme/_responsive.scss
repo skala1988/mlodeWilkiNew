@@ -1,0 +1,33 @@
+$break-xs-to: 749px;
+$break-sm-from: 750px;
+$break-sm-to: 969px;
+$break-md-from: 970px;
+$break-md-to: 1169px;
+$break-lg-from: 1170px;
+
+@mixin respond-to($media) {
+  @if $media == xs {
+    @media only screen and (max-width: $break-xs-to) { @content; }
+  }
+  @if $media == sm {
+    @media only screen and (max-width: $break-sm-to) { @content; }
+  }
+  @if $media == sm-up {
+    @media only screen and (min-width: $break-sm-from) { @content; }
+  }
+  @if $media == sm-down {
+    @media only screen and (max-width: $break-sm-to) { @content; }
+  }
+  @if $media == md {
+    @media only screen and (max-width: $break-md-to) and (min-width: $break-md-from){ @content; }
+  }
+  @if $media == md-up {
+    @media only screen and (min-width: $break-md-from){ @content; }
+  }
+  @if $media == md-down {
+    @media only screen and (max-width: $break-md-to){ @content; }
+  }
+  @if $media == lg {
+    @media only screen and (min-width: $break-lg-from){ @content; }
+  }
+}

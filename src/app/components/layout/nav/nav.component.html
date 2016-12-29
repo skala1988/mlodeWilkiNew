@@ -1,0 +1,107 @@
+<nav [ngClass]="{ scrolled: isScrolled | async, isRMA: isResponsiveMenuActive | async }">
+  <div class="nav-bar nav-bar-top">
+    <div class="container">
+      <div class="row">
+        <div class="pull-left">
+          <ul class="top-bar-sns">
+            <li><a target="_blank" rel="" href="https://www.facebook.com/samotne.wilki/"><i class="fa fa-facebook"></i></a></li>
+            <li><a target="_blank" rel="" href="https://www.youtube.com/channel/UC9M2UelfPGjQ_T19ETtjwBQ"><i class="fa fa-youtube"></i></a></li>
+            <li><a target="_blank" rel="" href="https://plus.google.com/u/0/117010698350678642673"><i class="fa fa-google-plus"></i></a></li>
+            <li><a target="_blank" rel="" href="mailto:klansamotnewilki@gmail.com"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+        </div>
+        <div class="pull-right">
+          <ul id="menu-topbar">
+            <li><a [routerLink]="['/register']"><span>Zarejstruj się</span></a></li>
+            <li><a [routerLink]="['/login']"><span>Zaloguj</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-bar nav-bar-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-bar-bottom-logo">
+            <div class="row left-logo">
+              <a [routerLink]="['/']">
+                <img src="assets/images/logosw_small.png" height="50" class="left-logo-img"/>
+                <div class="left-logo-site-name">
+                  <h1>Samotne Wilki</h1>
+                  <h2>Społeczność graczy</h2>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="nav-bar-bottom-menu">
+            <div class="row">
+              <span class="glyphicon glyphicon-menu-hamburger pull-right" (click)="toggleResponsiveMenu()"></span>
+              <div class="nav-bar-bottom-menu-links">
+                <ul id="menu-main" class="main-nav">
+                  <li class=""><a [routerLink]="['/']"><span class="menu-item-label">Home</span></a></li>
+                  <li class=""><a [routerLink]="['/o-nas']"><span class="menu-item-label">O nas</span></a></li>
+                  <li class=""><a [routerLink]="['/galeria-klanu']"><span class="menu-item-label">Galeria klanu</span></a></li>
+                  <li class=""><a [routerLink]="['/rekrutacja']"><span class="menu-item-label">Rekrutacja</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loader-bar"></div>
+</nav>
+
+
+  <!--<div class="main-header " style="display: block;">-->
+      <!--<div class="logo-box">-->
+        <!--<a href="http://samotnewilki.pl/">-->
+          <!--<img class="site-logo normal_logo" alt="Samotne Wilki" src="http://samotnewilki.pl/wp-content/uploads/2016/07/logosw_small.png">-->
+        <!--</a>-->
+        <!--<div class="name-box">-->
+          <!--<a href="http://samotnewilki.pl/"><h1 class="site-name">Samotne Wilki</h1></a>-->
+          <!--<span class="site-tagline">Społeczność graczy</span>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<button class="site-nav-toggle">-->
+        <!--<span class="sr-only">Toggle navigation</span>-->
+        <!--<i class="fa fa-bars fa-2x"></i>-->
+      <!--</button>-->
+      <!--<nav class="site-nav" role="navigation" style="">-->
+        <!--<ul id="menu-main" class="main-nav"><li id="menu-item-395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-368 current_page_item menu-item-395"><a href="http://samotnewilki.pl/"><span class="menu-item-label">Home</span></a></li>-->
+          <!--<li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="http://samotnewilki.pl/o-nas/"><span class="menu-item-label">O nas</span></a></li>-->
+          <!--<li id="menu-item-500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-500"><a href="http://samotnewilki.pl/galeria-klanu/"><span class="menu-item-label">Galeria klanu</span></a></li>-->
+          <!--<li id="menu-item-469" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-469"><a href="http://samotnewilki.pl/rekrutacja/"><span class="menu-item-label">Rekrutacja</span></a></li>-->
+          <!--<li class="menu-item menu-item-search-icon"><a href="javascript:;"><i class="fa fa-search site-search-toggle"></i></a><form role="search" class="search-form" action="http://samotnewilki.pl/">-->
+            <!--<div>-->
+              <!--<label class="sr-only">Search for:</label>-->
+              <!--<input type="text" name="s" value="" placeholder="Search...">-->
+              <!--<input type="submit" value="">-->
+            <!--</div>-->
+          <!--</form></li></ul>                    </nav>-->
+  <!--</div>-->
+  <!--&lt;!&ndash; sticky header &ndash;&gt;-->
+  <!--<div class="fxd-header logo-left" style="top: 0px; display: none;">-->
+      <!--<div class="logo-box text-left">-->
+        <!--<a href="http://samotnewilki.pl/">-->
+
+          <!--<img class="site-logo normal_logo" alt="Samotne Wilki" src="http://samotnewilki.pl/wp-content/uploads/2016/07/logosw_small.png">-->
+
+          <!--<img src="http://samotnewilki.pl/wp-content/uploads/2016/07/logosw_small.png" alt="Samotne Wilki" style="width:;max-height:; " class="site-logo retina_logo">-->
+        <!--</a>-->
+        <!--<div class="name-box">-->
+          <!--<a href="http://samotnewilki.pl/"><h1 class="site-name">Samotne Wilki</h1></a>-->
+          <!--<span class="site-tagline">Społeczność graczy</span>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<button class="site-nav-toggle">-->
+        <!--<span class="sr-only">Toggle navigation</span>-->
+        <!--<i class="fa fa-bars fa-2x"></i>-->
+      <!--</button>-->
+        <!--<ul id="menu-main" class="main-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-368 current_page_item menu-item-395"><a href="http://samotnewilki.pl/"><span class="menu-item-label">Home</span></a></li>-->
+          <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="http://samotnewilki.pl/o-nas/"><span class="menu-item-label">O nas</span></a></li>-->
+          <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-500"><a href="http://samotnewilki.pl/galeria-klanu/"><span class="menu-item-label">Galeria klanu</span></a></li>-->
+          <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-469"><a href="http://samotnewilki.pl/rekrutacja/"><span class="menu-item-label">Rekrutacja</span></a></li>-->
+        <!--</ul>-->

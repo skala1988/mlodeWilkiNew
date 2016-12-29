@@ -1,0 +1,10 @@
+@import '../../../theme/main';
+
+.container-fluid {
+  margin-top: 100px;
+  @include transition(margin-top 0.25s 0s linear);
+
+  &.scrolled {
+    margin-top: 70px;
+  }
+}
