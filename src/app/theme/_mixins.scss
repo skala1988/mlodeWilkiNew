@@ -4,3 +4,9 @@
   -webkit-transition: $transition;
   transition:         $transition;
 }
+
+@mixin borderRadius($ilePx) {
+  -webkit-border-radius: $ilePx;
+  -moz-border-radius: $ilePx;
+  border-radius: $ilePx;
+}
