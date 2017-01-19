@@ -8,6 +8,11 @@ const RoutesCfg = [
     guards: [],
     has_nav_link: false
   } , {
+    paths: ['login'],
+    component: 'Login',
+    guards: [],
+    has_nav_link: false
+  } , {
     paths: ['**'],
     component: 'NotFound',
     guards: [],

@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import {NavService} from '../../../providers/nav/nav.service';
 import {BehaviorSubject} from 'rxjs';
+import {AuthProvider} from "../../../providers/auth/auth.service";
 
 @Component({
   selector: 'app-nav',
@@ -12,7 +13,8 @@ export class NavComponent implements OnInit {
   private isResponsiveMenuActive: BehaviorSubject<boolean>;
 
   constructor(
-    private navService: NavService
+    private navService: NavService,
+    private authService: AuthProvider
   ) {}
 
   @HostListener('window:scroll', ['$event'])
@@ -24,5 +26,13 @@ export class NavComponent implements OnInit {
     this.isScrolled = this.navService.getIsScrolled();
     this.isResponsiveMenuActive = this.navService.getIsResponsiveMenuActive();
     this.scrollHandler();
+  }
+
+  toggleResponsiveMenu() {
+    this.navService.toggleResponsiveMenu();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
