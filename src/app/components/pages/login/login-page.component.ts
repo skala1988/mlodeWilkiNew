@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthProvider } from "../../../providers";
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { environment } from "../../../../environments/environment";
+import { environment } from '../../../../environments/environment';
+import { AuthProvider } from '../../../providers';
 
 @Component({
   selector: 'app-main',
@@ -20,8 +20,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.authProvider.getCsrfToken().subscribe(res => this.loginToken = res.response);
-    setInterval(() => this.authProvider.checkLogged().subscribe(res => this.loginToken = res.response), 5000);
+    this.authProvider.getCsrfToken().subscribe(res => this.loginToken = res.response.data);
 
     this.user = this.fb.group({
       email: [
@@ -44,7 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   signIn(): void {
-    let { email, password } = this;
-    this.authProvider.loginUser(email, password, this.loginToken);
+    let { email, password, loginToken } = this;
+    this.authProvider.loginUser(email, password, loginToken);
   }
 }

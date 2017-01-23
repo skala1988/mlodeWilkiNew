@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import {NavService} from '../../../providers/nav/nav.service';
-import {BehaviorSubject} from 'rxjs';
-import {AuthProvider} from "../../../providers/auth/auth.service";
+import { BehaviorSubject } from 'rxjs';
+import { AuthProvider, NavService } from '../../../providers';
 
 @Component({
   selector: 'app-nav',

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { ApiResponseInterface } from '../../interfaces/api-response.interface';
+import { ApiResponseParsedInterface } from '../../interfaces/api-response.interface';
 
 @Injectable()
 /**
@@ -18,8 +18,6 @@ export class HttpProvider {
   /**
    * @constructor
    * @param http Angular http service
-   * @param alertsProvider alerts service
-   * @param userSessionProvider alerts service
    * @param router alerts service
    */
   constructor(
@@ -61,7 +59,7 @@ export class HttpProvider {
    * @param response Response JSON string
    * @returns Object
    */
-  private extractData(response): ApiResponseInterface {
+  private extractData(response): ApiResponseParsedInterface {
     if (this.showResponses) {
       console.log('ok', response);
     }
@@ -78,7 +76,7 @@ export class HttpProvider {
    * @param response Response error object
    * @returns Observable
    */
-  private handleError(response): Observable<ApiResponseInterface> {
+  private handleError(response): Observable<ApiResponseParsedInterface> {
     if (this.showResponses) {
       console.log('fail', response);
     }

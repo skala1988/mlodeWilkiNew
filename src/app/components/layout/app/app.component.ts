@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {NavService} from '../../../providers';
-import {BehaviorSubject} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { NavService } from '../../../providers';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
